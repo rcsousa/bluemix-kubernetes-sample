@@ -16,7 +16,7 @@ fi
 eval "$exp"
 
 echo -e "Downloading guestbook yml"
-curl --silent "https://github.com/IBM/guestbook/blob/master/v2/guestbook-deployment.yaml" > guestbook.yml
+curl --silent "https://raw.githubusercontent.com/IBM/guestbook/master/v2/guestbook-deployment.yaml" > guestbook.yml
 
 #Find the line that has the comment about the load balancer and add the nodeport def after this
 let NU=$(awk '/^  # type: LoadBalancer/{ print NR; exit }' guestbook.yml)+3
